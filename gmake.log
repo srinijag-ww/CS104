@@ -1,0 +1,17 @@
+g++ -g -std=c++14 -c cppstrtok.cpp
+cppstrtok.cpp: In function ‘int main(int, char**)’:
+cppstrtok.cpp:143:29: error: invalid operands of types ‘char*’ and ‘const char [4]’ to binary ‘operator+’
+  char first = argv[argc-1]+ "str";
+                             ^
+cppstrtok.cpp:144:37: error: invalid conversion from ‘char’ to ‘const char*’ [-fpermissive]
+  FILE *fp = freopen(first,"w",stdout); //
+                                     ^
+In file included from /opt/rh/devtoolset-4/root/usr/include/c++/5.3.1/cstdio:42:0,
+                 from /opt/rh/devtoolset-4/root/usr/include/c++/5.3.1/ext/string_conversions.h:43,
+                 from /opt/rh/devtoolset-4/root/usr/include/c++/5.3.1/bits/basic_string.h:5249,
+                 from /opt/rh/devtoolset-4/root/usr/include/c++/5.3.1/string:52,
+                 from cppstrtok.cpp:7:
+/usr/include/stdio.h:278:14: note:   initializing argument 1 of ‘FILE* freopen(const char*, const char*, FILE*)’
+ extern FILE *freopen (const char *__restrict __filename,
+              ^
+gmake: *** [cppstrtok.o] Error 1
